@@ -1,0 +1,33 @@
+
+linux-boot.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000008000000 <_start>:
+ 8000000:	580001c0 	ldr	x0, 8000038 <hivec_boot>
+ 8000004:	580001e1 	ldr	x1, 8000040 <hivec_addr>
+ 8000008:	f9000020 	str	x0, [x1]
+ 800000c:	580000f1 	ldr	x17, 8000028 <kernel_start>
+ 8000010:	58000100 	ldr	x0, 8000030 <kernel_dts>
+ 8000014:	aa1f03e1 	mov	x1, xzr
+ 8000018:	aa1f03e2 	mov	x2, xzr
+ 800001c:	aa1f03e3 	mov	x3, xzr
+ 8000020:	d63f0220 	blr	x17
+ 8000024:	d503201f 	nop
+
+0000000008000028 <kernel_start>:
+ 8000028:	00080000 	.word	0x00080000
+ 800002c:	00000000 	.word	0x00000000
+
+0000000008000030 <kernel_dts>:
+ 8000030:	04080000 	.word	0x04080000
+ 8000034:	00000000 	.word	0x00000000
+
+0000000008000038 <hivec_boot>:
+ 8000038:	e3a0f000 	.word	0xe3a0f000
+ 800003c:	00000000 	.word	0x00000000
+
+0000000008000040 <hivec_addr>:
+ 8000040:	ffff0000 	.word	0xffff0000
+ 8000044:	00000000 	.word	0x00000000
